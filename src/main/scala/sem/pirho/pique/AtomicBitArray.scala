@@ -10,10 +10,8 @@ object AtomicBitArray {
   private val setFalse = createSetFalses
 
 
-  def apply(capacity:Int) = {
+  def apply(capacity:Int) = new AtomicBitArray(capacity)
 
-    new AtomicBitArray()
-  }
   private def createToggles: Array[IntUnaryOperator] =
     (0 until 32).foldLeft (new Array[IntUnaryOperator](32)) {
       case (acc, i) =>
